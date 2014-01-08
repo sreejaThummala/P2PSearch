@@ -26,7 +26,7 @@ public class MD5 {
                       } else {
                       
                       id = clearTextID + "~" + function;
-                  `  
+                  
                   }
                   
                 byte[] buffer = id.getBytes();
