@@ -20,16 +20,18 @@ import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
 
-public class FileCarer {
-public FileCarer()
-{File file=new File("Tags.Downloads");
-if(!file.exists())
-System.out.println("No Tags Found");
-else
-{File[] flist=file.listFiles();
-for(int i=0;i<flist.length;i++)
-{
-try {
+public class FileManager {
+    
+    public FileManager(){
+      File file=new File("Tags.Downloads");
+
+    if(!file.exists()){
+      System.out.println("No Tags Found");}
+        else
+      {
+        File[] flist=file.listFiles();
+        for(int i=0;i<flist.length;i++){
+            try {
 DocumentBuilderFactory docBuilderFactory = DocumentBuilderFactory.newInstance();
 DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
 Document doc = docBuilder.parse (flist[i]);
