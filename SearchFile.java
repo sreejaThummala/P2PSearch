@@ -13,25 +13,29 @@ import net.jxta.share.client.CachedListContentRequest;
 public class SearchFile extends Thread{
 
 	private String RelevanceFactor;
-  private static class ListTagSearchRequestor extends Thread{
-private ContentAdvertisement[] searchResult;
-private String Key;
-private ChatInput chatIn;
-private ChatOutput chatOut;
-private JTextArea log=null;
-private JTable table1;
-private PeerGroup Group;
-private String RelevanceFactor;
-public ListTagSearchRequestor(PeerGroup BITSGroup, String searchValue, JTextArea log, JTable table,ChatInput
-chatIn,ChatOutput chatOut,String RelevanceFactor) {
-this.Group=BITSGroup;
-// this.Key=searchValue;
-//this.chatIn=chatIn;
-// this.chatOut=chatOut;
-// this.log=log;
-// this.RelevanceFactor=RelevanceFactor;
-// this.table1=table;
-chatOut.setPeerIDFrom(new MD5().createPeerID(Group.getPeerGroupID(),Group.getPeerName(),null).toString()
+	
+	private static class ListTagSearchRequestor extends Thread{
+	private ContentAdvertisement[] searchResult;
+	private String Key;
+	private ChatInput chatIn;
+	private ChatOutput chatOut;
+	private JTextArea log=null;
+	private JTable table1;
+	private PeerGroup Group;
+	private String RelevanceFactor;
+	
+	
+	public ListTagSearchRequestor(PeerGroup BITSGroup, String searchValue, JTextArea log, JTable table,ChatInput
+	chatIn,ChatOutput chatOut,String RelevanceFactor) {
+		this.Group=BITSGroup;
+		this.Key=searchValue;
+		this.chatIn=chatIn;
+		this.chatOut=chatOut;
+		this.log=log;
+		this.RelevanceFactor=RelevanceFactor;
+		this.table1=table;
+		
+		chatOut.setPeerIDFrom(new MD5().createPeerID(Group.getPeerGroupID(),Group.getPeerName(),null).toString()
 );
 System.out.println(Key);
 chatOut.setFileName(searchValue);
