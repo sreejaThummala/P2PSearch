@@ -1,5 +1,5 @@
-SearchFile
 package myPackage;
+
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JTable;
@@ -9,10 +9,11 @@ import net.jxta.peergroup.PeerGroup;
 import net.jxta.share.ContentAdvertisement;
 import net.jxta.share.client.CachedListContentRequest;
 //inner class for search
-public class SearchFile extends Thread
-{
-private String RelevanceFactor;
-private static class ListTagSearchRequestor extends Thread{
+
+public class SearchFile extends Thread{
+
+	private String RelevanceFactor;
+  private static class ListTagSearchRequestor extends Thread{
 private ContentAdvertisement[] searchResult;
 private String Key;
 private ChatInput chatIn;
